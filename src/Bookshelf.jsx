@@ -10,19 +10,19 @@ function Bookshelf() {
 
   // Handles input changes dynamically
   const handleInputChange = (event) => {
-    const { name, value } = event.target; // Get the field name and value
+    const { name, value } = event.target; 
     setNewBook((prev) => ({
       ...prev, // Spread the previous fields
-      [name]: value, // Update the field that changed
+      [name]: value, 
     }));
   };
 
   // Handles form submission
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault(); 
     if (newBook.title && newBook.author) {
-      setBooks([...books, newBook]); // Add the new book using the spread operator
-      setNewBook({ title: '', author: '' }); // Reset the form inputs
+      setBooks([...books, newBook]); 
+      setNewBook({ title: '', author: '' }); 
     }
   };
 
@@ -34,17 +34,17 @@ function Bookshelf() {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            name="title" // Matches newBook's property
+            name="title" 
             placeholder="Title"
             value={newBook.title}
-            onChange={handleInputChange} // Dynamic handler
+            onChange={handleInputChange} 
           />
           <input
             type="text"
-            name="author" // Matches newBook's property
+            name="author" 
             placeholder="Author"
             value={newBook.author}
-            onChange={handleInputChange} // Dynamic handler
+            onChange={handleInputChange}
           />
           <button type="submit">Add Book</button>
         </form>
